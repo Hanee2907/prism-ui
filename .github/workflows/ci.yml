@@ -27,6 +27,11 @@ jobs:
 
       - run: npm ci
 
+      - name: Design tokens are up to date
+        run: |
+          npm run tokens
+          git diff --exit-code -- src/lib/generated || (echo "::error::tokens/*.json changed but src/lib/generated was not rebuilt. Run npm run tokens and commit." && exit 1)
+
       - name: Unit tests (contrast + React components)
         run: npm test
 

@@ -1,6 +1,8 @@
 import type { Preview } from '@storybook/react';
 import { useEffect } from 'react';
-import '../src/lib/tokens.css';
+import '../src/lib/generated/light.css';
+import '../src/lib/generated/dark.css';
+import '../src/lib/theme.css';
 import '../src/lib/components.css';
 import { setTheme } from '../src/lib/index';
 

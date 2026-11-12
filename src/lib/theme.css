@@ -1,0 +1,72 @@
+/* Prism UI theme: values composed from the design tokens.
+   The raw tokens live in tokens/*.json and are generated into src/lib/generated/ by Style Dictionary;
+   this file only builds things out of them (gradients, the light wash, shadows, scaled corners)
+   and adds calm mode. */
+
+:root,
+[data-pr-theme='light'] {
+  /* the spectrum: bright for light and glow, deep where text sits on it */
+  --pr-spectrum: linear-gradient(100deg, var(--pr-pink) 0%, var(--pr-violet) 50%, var(--pr-cyan) 100%);
+  --pr-spectrum-deep: linear-gradient(100deg, var(--pr-pink-deep) 0%, var(--pr-violet-deep) 50%, var(--pr-cyan-deep) 100%);
+  --pr-spectrum-ring: conic-gradient(from 200deg, var(--pr-pink), var(--pr-violet), var(--pr-cyan), var(--pr-sun), var(--pr-pink));
+  --pr-mesh:
+    radial-gradient(circle at 18% 22%, #ffc4ea 0, transparent 32%),
+    radial-gradient(circle at 80% 14%, #b3ebff 0, transparent 34%),
+    radial-gradient(circle at 62% 82%, #d6c6ff 0, transparent 36%),
+    radial-gradient(circle at 12% 88%, #ffe8b8 0, transparent 30%);
+
+  /* shape: the light lab scales every corner with --pr-round */
+  --pr-round: 1;
+  --pr-radius-sm: calc(var(--pr-radius-base-sm) * var(--pr-round));
+  --pr-radius-md: calc(var(--pr-radius-base-md) * var(--pr-round));
+  --pr-radius-lg: calc(var(--pr-radius-base-lg) * var(--pr-round));
+  --pr-radius-xl: calc(var(--pr-radius-base-xl) * var(--pr-round));
+  --pr-radius-pill: 999px;
+
+  /* depth: soft violet shadows, as if light passed through */
+  --pr-shadow-sm: 0 8px 20px -12px rgba(60, 40, 140, 0.35);
+  --pr-shadow-md: 0 22px 50px -26px rgba(60, 40, 140, 0.45);
+  --pr-shadow-lg: 0 40px 90px -40px rgba(60, 40, 140, 0.55);
+  --pr-glow: 0 18px 40px -14px rgba(106, 92, 255, 0.6);
+}
+
+[data-pr-theme='dark'] {
+  --pr-mesh:
+    radial-gradient(circle at 18% 22%, rgba(255, 95, 184, 0.28) 0, transparent 34%),
+    radial-gradient(circle at 80% 14%, rgba(24, 181, 230, 0.24) 0, transparent 34%),
+    radial-gradient(circle at 62% 82%, rgba(106, 92, 255, 0.32) 0, transparent 38%),
+    radial-gradient(circle at 12% 88%, rgba(255, 207, 110, 0.14) 0, transparent 30%);
+  --pr-shadow-sm: 0 8px 20px -12px rgba(0, 0, 0, 0.7);
+  --pr-shadow-md: 0 22px 50px -26px rgba(0, 0, 0, 0.8);
+  --pr-shadow-lg: 0 40px 90px -40px rgba(0, 0, 0, 0.9);
+  --pr-glow: 0 18px 44px -12px rgba(106, 92, 255, 0.75);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-pr-theme='light']) {
+    --pr-mesh:
+      radial-gradient(circle at 18% 22%, rgba(255, 95, 184, 0.28) 0, transparent 34%),
+      radial-gradient(circle at 80% 14%, rgba(24, 181, 230, 0.24) 0, transparent 34%),
+      radial-gradient(circle at 62% 82%, rgba(106, 92, 255, 0.32) 0, transparent 38%),
+      radial-gradient(circle at 12% 88%, rgba(255, 207, 110, 0.14) 0, transparent 30%);
+    --pr-shadow-sm: 0 8px 20px -12px rgba(0, 0, 0, 0.7);
+    --pr-shadow-md: 0 22px 50px -26px rgba(0, 0, 0, 0.8);
+    --pr-shadow-lg: 0 40px 90px -40px rgba(0, 0, 0, 0.9);
+    --pr-glow: 0 18px 44px -12px rgba(106, 92, 255, 0.75);
+  }
+}
+
+/* Calm mode: near-instant motion. Opt in with data-pr-motion="calm",
+   or call PrismUI.followSystemMotion() to switch it on from the visitor's system setting. */
+[data-pr-motion='calm'] {
+  --pr-fast: 0.01s;
+  --pr-base: 0.01s;
+  --pr-slow: 0.01s;
+}
+
+[data-pr-motion='calm'] *,
+[data-pr-motion='calm'] *::before,
+[data-pr-motion='calm'] *::after {
+  animation-duration: 0.01s !important;
+  animation-iteration-count: 1 !important;
+}

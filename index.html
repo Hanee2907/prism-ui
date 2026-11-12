@@ -83,6 +83,7 @@
         <a href="#type">Typography</a>
         <a href="#shape">Glass &amp; shape</a>
         <a href="#motion">Motion</a>
+        <a href="#tokens">Design tokens</a>
         <p class="pr-eyebrow">Components</p>
         <a href="#buttons">Buttons</a>
         <a href="#lens">Lens</a>
@@ -159,6 +160,34 @@
             <div class="track"><span class="ball linear"></span><small>linear</small></div>
             <button class="pr-btn pr-btn--ink" id="motion-play">▶ Play</button>
           </div>
+        </section>
+
+        <section class="doc" id="tokens">
+          <p class="pr-eyebrow">Foundations</p>
+          <h2 class="pr-h1">Design <em>tokens</em></h2>
+          <p class="pr-lead">Every colour, font, size, corner and timing lives in one place: three small JSON files. <b>Style Dictionary</b> turns them into the CSS this page uses, plus JavaScript with TypeScript types, iOS and Android colour files, so an app on any platform can glow the same way.</p>
+          <div class="token-flow">
+            <div class="pr-card pr-glass token-source">
+              <p class="pr-eyebrow">Source</p>
+              <b>tokens/*.json</b>
+              <span class="pr-muted">base · Day · Midnight</span>
+            </div>
+            <span class="token-arrow" aria-hidden="true">→</span>
+            <div class="pr-card pr-glass token-engine">
+              <p class="pr-eyebrow">Build</p>
+              <b>Style Dictionary</b>
+              <span class="pr-muted">one script, on every build and in CI</span>
+            </div>
+            <span class="token-arrow" aria-hidden="true">→</span>
+            <ul class="token-outputs">
+              <li><a class="pr-chip" href="https://github.com/Hanee2907/prism-ui/blob/main/src/lib/generated/light.css">CSS variables</a></li>
+              <li><a class="pr-chip" href="./tokens/js/light.js">JavaScript</a> <a class="pr-chip" href="./tokens/js/light.d.ts">TypeScript types</a></li>
+              <li><a class="pr-chip" href="./tokens/ios/PrismDayColors.swift">iOS · Swift</a> <a class="pr-chip" href="./tokens/android/values/prism_colors.xml">Android · XML</a></li>
+              <li><a class="pr-chip" href="./tokens/json/light.json">Flat JSON</a></li>
+            </ul>
+          </div>
+          <pre class="code"><code id="token-code"></code></pre>
+          <div class="pr-callout pr-callout--success start-note"><b>✓</b><div>The contrast tests read these JSON files directly, and CI fails if anyone edits a token without regenerating the CSS, so the source, the site and the tests can never drift apart.</div></div>
         </section>
 
         <!-- ========== Components ========== -->
@@ -479,7 +508,7 @@ PrismUI.toast('Theme copied ✓', 'success');</template>
           <h2 class="pr-h1">Accessibility</h2>
           <p class="pr-lead">Glass and rainbows are easy to get wrong. Prism is built so everyone can still read and use it.</p>
           <ul class="checks">
-            <li><b>Contrast, tested.</b> 30 automated tests check every text and background pair in both themes against WCAG AA, using the solid colour behind the glass, so text stays readable even with nothing colourful behind it.</li>
+            <li><b>Contrast, tested.</b> 28 automated tests check every text and background pair in both themes against WCAG AA, reading the design tokens directly and using the solid colour behind the glass, so text stays readable even with nothing colourful behind it.</li>
             <li><b>Two spectrums.</b> The bright one is only for glows, rings and toggles. Anything with text on it uses the deep spectrum, where white text reaches at least 4.9:1.</li>
             <li><b>Real elements.</b> Buttons are buttons, switches are checkboxes, the modal is a native dialog and the accordion is details and summary, so keyboards and screen readers work without extra code.</li>
             <li><b>Visible focus.</b> A thick violet ring shows where the keyboard is, everywhere.</li>

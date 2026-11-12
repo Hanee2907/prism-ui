@@ -258,7 +258,21 @@ $('start-code').textContent = `<!-- 1. Fonts and Prism UI -->
   </script>
 </body>`;
 
-$('react-code').textContent = `import 'prism-ui/react/prism-ui.css';
+$('token-code').textContent = `// tokens/light.json (excerpt)
+{
+  "color": {
+    "violet":      { "value": "#6a5cff", "type": "color" },
+    "violet-deep": { "value": "#5b46f0", "type": "color", "comment": "Deep spectrum: wherever text sits on it" },
+    "ink":         { "value": "#16123a", "type": "color", "comment": "Text" }
+  }
+}
+
+/* becomes CSS */            --pr-violet-deep: #5b46f0;
+/* JavaScript */             export const ColorVioletDeep = "#5b46f0";
+/* iOS */                    public static let colorVioletDeep = UIColor(red: 0.357, green: 0.275, blue: 0.941, alpha: 1)
+/* Android */                <color name="color_violet_deep">#ff5b46f0</color>`;
+
+$('react-code').textContent =`import 'prism-ui/react/prism-ui.css';
 import { Button, Lens, Heading, Switch, useToast } from 'prism-ui/react';
 
 export function Card() {

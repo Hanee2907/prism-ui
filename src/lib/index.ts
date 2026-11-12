@@ -1,7 +1,9 @@
 // Prism UI behaviour: the few pieces that need JavaScript (lens light, tabs, modals, toasts,
 // reveal-on-scroll, theme and motion). Everything else is plain CSS. Call init() once after the page loads.
 
-import './tokens.css';
+import './generated/light.css';
+import './generated/dark.css';
+import './theme.css';
 import './components.css';
 
 export type Theme = 'light' | 'dark' | 'auto';

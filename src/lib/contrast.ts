@@ -23,18 +23,6 @@ export function grade(ratio: number): 'AAA' | 'AA' | 'AA large' | 'Fail' {
   return 'Fail';
 }
 
-/** Reads the --pr-* hex colours from one block of tokens.css. */
-export function readTokens(css: string, selector: string): Record<string, string> {
-  const start = css.indexOf(selector);
-  if (start < 0) throw new Error(`No ${selector} block`);
-  const open = css.indexOf('{', start);
-  // find the matching close brace (blocks contain nested parentheses but no nested braces)
-  const body = css.slice(open + 1, css.indexOf('\n}', open));
-  const out: Record<string, string> = {};
-  for (const m of body.matchAll(/--pr-([\w-]+):\s*(#[0-9a-fA-F]{3,6})\b/g)) out[m[1]] = m[2];
-  return out;
-}
-
 /** Every text-on-background pair the components use, and the contrast each must reach. */
 export const PAIRS: [text: string, bg: string, min: number, where: string][] = [
   ['ink', 'bg', 4.5, 'body text'],

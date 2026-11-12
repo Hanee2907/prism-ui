@@ -15,6 +15,20 @@ A design system of frosted glass, soft mesh gradients and one rainbow that runs 
 - **Light lab:** pick a spectrum (Prism, Sunset, Aurora, Ocean, Bloom), roundness, frost and Day or Midnight, and the whole page follows. It deepens colours automatically wherever text sits on them, then copies your theme as CSS.
 - **Every demo shows its exact code**, with a copy button.
 
+## Design tokens
+
+Every colour, font, size, corner and timing lives in three JSON files in [`tokens/`](tokens): `base.json`, `light.json` (Day) and `dark.json` (Midnight). [Style Dictionary](https://styledictionary.com) turns them into:
+
+| Output | Where | Used by |
+|---|---|---|
+| CSS variables | `src/lib/generated/` | the library, docs and Storybook |
+| JavaScript + TypeScript types | `/tokens/js/` | apps that need values in code (charts, canvas) |
+| iOS Swift | `/tokens/ios/` | `PrismDayColors`, `PrismMidnightColors` |
+| Android XML | `/tokens/android/values` and `values-night` | Day and Midnight colour resources |
+| Flat JSON | `/tokens/json/` | anything else |
+
+`theme.css` builds the rest out of the tokens (spectrum gradients, the light wash, shadows, the roundness multiplier). The contrast tests read the JSON directly, and CI fails if a token changes without the CSS being regenerated (`npm run tokens`).
+
 ## React
 
 22 typed React components over the same CSS: `Button`, `Lens`, `Card`, `Chip`, `Badge`, `Heading`, `TextField`, `TextArea`, `Select`, `Checkbox`, `Radio`, `Switch`, `Segmented`, `Tabs`, `Accordion`, `Callout`, `Progress`, `Ring`, `Avatar`, `Tooltip`, `Modal` and `Nav`, plus a `useToast()` hook. Each has a page in **Storybook** with live controls, a Day/Midnight switch and the a11y checker.
@@ -32,13 +46,13 @@ import { Button, Lens, Heading, Switch } from 'prism-ui/react';
 
 ## Testing and CI
 
-- **Unit tests (Vitest):** 30 contrast tests on the design tokens, plus 9 React component tests with Testing Library (labels, keyboard tabs, switches, modal, error states).
+- **Unit tests (Vitest):** 31 tests on the design tokens (WCAG AA contrast for every text pair in Day and Midnight, read straight from the JSON, plus a check that the generated CSS matches), plus 9 React component tests with Testing Library (labels, keyboard tabs, switches, modal, error states).
 - **Browser tests (Playwright + axe-core):** 19 tests open the real built site on desktop and phone sizes, scan Day and Midnight for WCAG A/AA violations, and click through the theme switch, tabs, modal, toasts, light lab and code panels.
 - **GitHub Actions:** every push and pull request runs the type-check, unit tests, full build (docs, library, React package, Storybook) and browser tests; pushes to `main` that pass are deployed to GitHub Pages automatically.
 
 ## Accessibility
 
-- **Contrast, tested.** 30 automated tests (Vitest) check every text and background pair in both themes against WCAG AA, using the solid colour behind the glass so text stays readable with nothing colourful behind it.
+- **Contrast, tested.** 28 automated tests (Vitest) check every text and background pair in both themes against WCAG AA, using the solid colour behind the glass so text stays readable with nothing colourful behind it.
 - **Two spectrums.** The bright one is only for glows, rings and toggles; buttons and badges use the deep one, where white text reaches at least 4.9:1.
 - **Real elements:** native buttons, checkbox switches, `<dialog>` modals and `<details>` accordions, so keyboards and screen readers just work.
 - **Visible focus** everywhere, **46px** touch targets, and a **calm motion** mode (`followSystemMotion()` turns it on from the system setting).
@@ -63,15 +77,16 @@ import { Button, Lens, Heading, Switch } from 'prism-ui/react';
 
 ## Built with
 
-TypeScript · React · CSS custom properties · Vite · Storybook · Vitest + Testing Library · Playwright + axe-core · GitHub Actions
+TypeScript · React · CSS custom properties · Style Dictionary (design tokens) · Vite · Storybook · Vitest + Testing Library · Playwright + axe-core · GitHub Actions
 
 ```bash
 npm install
 npm run dev     # docs site
-npm test        # unit tests (contrast + React)
+npm run tokens  # regenerate CSS from tokens/*.json
+npm test        # unit tests (tokens + React)
 npm run storybook   # component workshop
 npm run test:e2e    # browser + accessibility tests
-npm run build   # dist/: docs, lib/ (CSS + JS), react/ (components + types), storybook/
+npm run build   # dist/: docs, lib/ (CSS + JS), react/ (components + types), tokens/ (JS, TS, iOS, Android), storybook/
 ```
 
 Designed and built by [Hanee Patel](https://hanee2907.github.io).

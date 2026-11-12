@@ -1,0 +1,17 @@
+{
+  "color": {
+    "bg": { "value": "#0d0b24", "type": "color", "comment": "Midnight: the same light, after dark" },
+    "bg-2": { "value": "#16133a", "type": "color" },
+    "surface": { "value": "#1b1842", "type": "color" },
+    "glass": { "value": "rgba(255, 255, 255, 0.06)", "type": "color" },
+    "glass-strong": { "value": "rgba(255, 255, 255, 0.1)", "type": "color" },
+    "glass-edge": { "value": "rgba(255, 255, 255, 0.16)", "type": "color" },
+    "line": { "value": "rgba(241, 238, 255, 0.12)", "type": "color" },
+    "ink": { "value": "#f1eeff", "type": "color" },
+    "ink-2": { "value": "#c3bde6", "type": "color" },
+    "ink-3": { "value": "#a29cc9", "type": "color" },
+    "accent-text": { "value": "#b4a8ff", "type": "color" },
+    "mint": { "value": "#3fd49a", "type": "color" },
+    "coral": { "value": "#ff8a78", "type": "color" }
+  }
+}

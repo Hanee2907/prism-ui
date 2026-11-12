@@ -832,3 +832,60 @@ input[type='range'] {
 .react-title {
   margin: 48px 0 0;
 }
+
+/* ---------- Design tokens flow ---------- */
+
+.token-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1.3fr);
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.token-flow .pr-card {
+  display: grid;
+  gap: 2px;
+}
+
+.token-flow .pr-eyebrow {
+  margin-bottom: 4px;
+}
+
+.token-arrow {
+  font-size: 28px;
+  background: var(--pr-spectrum);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.token-outputs {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.token-outputs .pr-chip {
+  color: var(--pr-ink);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform var(--pr-base) var(--pr-spring);
+}
+
+.token-outputs .pr-chip:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 960px) {
+  .token-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .token-arrow {
+    transform: rotate(90deg);
+    justify-self: center;
+  }
+}
