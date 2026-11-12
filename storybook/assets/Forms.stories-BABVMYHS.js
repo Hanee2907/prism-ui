@@ -9,16 +9,16 @@ import{j as e}from"./jsx-runtime-CBDCb4rg.js";import{T as f,S as k,a as S,C as s
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 260px)',
     gap: 20
-  }}>\r
-      <TextField label="Your name" placeholder="Hanee Patel" />\r
-      <Select label="Plan" defaultValue="Studio">\r
-        <option>Starter</option>\r
-        <option>Studio</option>\r
-        <option>Pro</option>\r
-      </Select>\r
+  }}>
+      <TextField label="Your name" placeholder="Hanee Patel" />
+      <Select label="Plan" defaultValue="Studio">
+        <option>Starter</option>
+        <option>Studio</option>
+        <option>Pro</option>
+      </Select>
       <TextArea label="Message" placeholder="Tell us what you're making" style={{
       gridColumn: '1 / -1'
-    }} />\r
+    }} />
     </div>
 }`,...(g=(h=r.parameters)==null?void 0:h.docs)==null?void 0:g.source}}};var b,x,y;t.parameters={...t.parameters,docs:{...(b=t.parameters)==null?void 0:b.docs,source:{originalSource:`{
   render: () => <div style={{
@@ -27,12 +27,12 @@ import{j as e}from"./jsx-runtime-CBDCb4rg.js";import{T as f,S as k,a as S,C as s
     gap: 24,
     alignItems: 'center',
     maxWidth: 640
-  }}>\r
-      <Checkbox label="Email me updates" defaultChecked />\r
-      <Checkbox label="Weekly digest" />\r
-      <Radio name="billing" label="Monthly" defaultChecked />\r
-      <Radio name="billing" label="Yearly" />\r
-      <Switch label="Night shift" defaultChecked />\r
+  }}>
+      <Checkbox label="Email me updates" defaultChecked />
+      <Checkbox label="Weekly digest" />
+      <Radio name="billing" label="Monthly" defaultChecked />
+      <Radio name="billing" label="Yearly" />
+      <Switch label="Night shift" defaultChecked />
       <Segmented label="View" defaultValue="week" options={[{
       value: 'day',
       label: 'Day'
@@ -42,6 +42,6 @@ import{j as e}from"./jsx-runtime-CBDCb4rg.js";import{T as f,S as k,a as S,C as s
     }, {
       value: 'month',
       label: 'Month'
-    }]} />\r
+    }]} />
     </div>
 }`,...(y=(x=t.parameters)==null?void 0:x.docs)==null?void 0:y.source}}};const P=["Text","WithError","AllFields","Choices"];export{r as AllFields,t as Choices,a as Text,l as WithError,P as __namedExportsOrder,V as default};
