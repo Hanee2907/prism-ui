@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prism UI · interfaces made of light</title>
+    <meta name="description" content="Prism UI is a design system made of light: frosted glass, soft mesh gradients and one rainbow running through every button, toggle and chart. Accessible, light and Midnight themes, copy-paste ready." />
+    <meta name="theme-color" content="#f4f1ff" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="./assets/index-DPwX53mY.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CDHJAddj.css">
+  </head>
+  <body class="pr">
+    <div class="pr-mesh" aria-hidden="true"></div>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="top">
+      <nav class="pr-nav" aria-label="Main">
+        <a class="pr-logo" href="#"><i></i>Prism</a>
+        <a href="#colour">Foundations</a>
+        <a href="#buttons">Components</a>
+        <a href="#studio">Light lab</a>
+        <a href="#start">Get started</a>
+        <button class="pr-btn pr-btn--ink pr-btn--sm" id="theme-toggle" aria-pressed="false">
+          <span aria-hidden="true" id="theme-icon">☾</span> <span id="theme-label">Midnight</span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ========== Hero ========== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <p class="pr-chip hero-chip"><span class="pr-pulse"></span> Prism UI 1.0 · 20 components · light &amp; Midnight</p>
+        <h1 class="pr-display" id="hero-title">Interfaces made of <em>light.</em></h1>
+        <p class="pr-lead">Frosted glass layers, soft mesh gradients and one rainbow that runs through every button, chart and toggle, like light through a prism. Accessible by default, tested for contrast, and ready to copy.</p>
+        <div class="hero-cta">
+          <a class="pr-btn pr-btn--spectrum pr-btn--lg" href="#start">Start building</a>
+          <a class="pr-btn pr-btn--glass pr-btn--lg" href="#buttons">View components</a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <svg class="prism" viewBox="0 0 240 200" aria-hidden="true">
+          <defs>
+            <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95" /><stop offset="1" stop-color="#fff" stop-opacity=".18" /></linearGradient>
+            <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#ff5fb8" /><stop offset=".5" stop-color="#6a5cff" /><stop offset="1" stop-color="#18b5e6" /></linearGradient>
+          </defs>
+          <path class="beam-in" d="M0 104 L98 98" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+          <polygon points="120,14 205,164 35,164" fill="url(#glass)" stroke="#fff" stroke-width="2" />
+          <polygon points="120,14 205,164 120,128" fill="url(#beam)" opacity=".28" />
+          <g class="beams" stroke-width="6" stroke-linecap="round">
+            <path d="M150 98 L240 70" stroke="#ff5fb8" />
+            <path d="M150 102 L240 100" stroke="#6a5cff" />
+            <path d="M150 106 L240 130" stroke="#18b5e6" />
+          </g>
+        </svg>
+        <div class="pr-lens hero-card c-light">
+          <p class="pr-eyebrow">Today</p>
+          <h2 class="pr-h3">Morning light</h2>
+          <p class="pr-muted">Sunrise 6:52 · golden hour 4:31</p>
+          <label class="pr-switch"><input type="checkbox" role="switch" checked /> Notify me</label>
+        </div>
+        <div class="pr-lens hero-card c-focus">
+          <h2 class="pr-h3">Focus</h2>
+          <span class="pr-ring" style="--pr-value: 82"><b>82%</b></span>
+        </div>
+        <div class="pr-lens hero-card c-glow">
+          <h2 class="pr-h3">Stay in the glow</h2>
+          <div class="hero-form">
+            <input class="pr-input" placeholder="you@studio.com" aria-label="Email" />
+            <button class="pr-btn pr-btn--spectrum">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="layout">
+      <aside class="side pr-glass" aria-label="Sections">
+        <p class="pr-eyebrow">Foundations</p>
+        <a href="#colour">Colour &amp; light</a>
+        <a href="#type">Typography</a>
+        <a href="#shape">Glass &amp; shape</a>
+        <a href="#motion">Motion</a>
+        <p class="pr-eyebrow">Components</p>
+        <a href="#buttons">Buttons</a>
+        <a href="#lens">Lens</a>
+        <a href="#badges">Chips &amp; badges</a>
+        <a href="#cards">Cards</a>
+        <a href="#forms">Text fields</a>
+        <a href="#choices">Choices</a>
+        <a href="#tabs">Tabs</a>
+        <a href="#accordion">Accordion</a>
+        <a href="#callouts">Callouts</a>
+        <a href="#progress">Progress &amp; avatars</a>
+        <a href="#overlays">Tooltip, modal &amp; toast</a>
+        <a href="#nav">Glass nav</a>
+        <p class="pr-eyebrow">Make it yours</p>
+        <a href="#studio">Light lab</a>
+        <a href="#a11y">Accessibility</a>
+        <a href="#start">Get started</a>
+      </aside>
+
+      <main id="main">
+        <!-- ========== Foundations ========== -->
+        <section class="doc" id="colour">
+          <p class="pr-eyebrow">Foundations</p>
+          <h2 class="pr-h1">Colour &amp; <em>light</em></h2>
+          <p class="pr-lead">A lavender-white room, deep indigo ink, and a spectrum in two strengths: bright for glows, rings and toggles, deep wherever text sits on it. The contrast grades below are worked out live from the page, so they change in Midnight and in the light lab.</p>
+          <div class="spectrum-bars">
+            <div><span style="background: var(--pr-spectrum)"></span><b>Spectrum</b><code>--pr-spectrum</code><small>glows, rings, switches</small></div>
+            <div><span style="background: var(--pr-spectrum-deep)"></span><b>Deep spectrum</b><code>--pr-spectrum-deep</code><small>buttons and badges, white text 5:1+</small></div>
+          </div>
+          <div class="swatches" id="swatches"></div>
+        </section>
+
+        <section class="doc" id="type">
+          <p class="pr-eyebrow">Foundations</p>
+          <h2 class="pr-h1">Typography</h2>
+          <p class="pr-lead"><b>Instrument Serif</b> for headlines: tall, calm and elegant. <b>Manrope</b> for everything you read: clean, round and friendly.</p>
+          <div class="type-scale pr-glass">
+            <div><span class="pr-muted">Display · .pr-display</span><p class="pr-display">Made of <em>light.</em></p></div>
+            <div><span class="pr-muted">Heading 1 · .pr-h1</span><p class="pr-h1">Bend it <em>beautifully</em></p></div>
+            <div><span class="pr-muted">Heading 2 · .pr-h2</span><p class="pr-h2">Stay in the glow</p></div>
+            <div><span class="pr-muted">Heading 3 · .pr-h3</span><p class="pr-h3">Golden hour at 4:31</p></div>
+            <div><span class="pr-muted">Lead · .pr-lead</span><p class="pr-lead">Frosted glass layers and one rainbow that runs through everything.</p></div>
+            <div><span class="pr-muted">Eyebrow · .pr-eyebrow</span><p class="pr-eyebrow">New collection</p></div>
+            <div><span class="pr-muted">Body, link and key</span><p>Press <kbd class="pr-kbd">Esc</kbd> to close, or read the <a class="pr-link" href="#start">getting started guide</a>.</p></div>
+          </div>
+        </section>
+
+        <section class="doc" id="shape">
+          <p class="pr-eyebrow">Foundations</p>
+          <h2 class="pr-h1">Glass &amp; shape</h2>
+          <p class="pr-lead">Everything is made of the same frosted glass: a translucent fill, a bright top edge, an 18px blur, and a soft violet shadow, as if light passed through it.</p>
+          <div class="glass-demo">
+            <div class="glass-orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="pr-glass glass-layer l1"><b>.pr-glass</b><span>blur 18px · saturate 150%</span></div>
+            <div class="pr-glass glass-layer l2"><b>Layered</b><span>glass over glass stays readable</span></div>
+          </div>
+          <div class="radii">
+            <div style="border-radius: var(--pr-radius-sm)"><span>sm</span></div>
+            <div style="border-radius: var(--pr-radius-md)"><span>md</span></div>
+            <div style="border-radius: var(--pr-radius-lg)"><span>lg</span></div>
+            <div style="border-radius: var(--pr-radius-xl)"><span>xl</span></div>
+            <div style="border-radius: var(--pr-radius-pill)"><span>pill</span></div>
+          </div>
+          <div class="spaces" id="spaces"></div>
+        </section>
+
+        <section class="doc" id="motion">
+          <p class="pr-eyebrow">Foundations</p>
+          <h2 class="pr-h1">Motion</h2>
+          <p class="pr-lead">Two curves. <b>Ease</b> glides things into place; <b>spring</b> gives toggles, chips and pop-ups a tiny bounce, like light settling. Press play to compare them with a plain linear move.</p>
+          <div class="motion-demo pr-glass">
+            <div class="track"><span class="ball ease"></span><small>ease</small></div>
+            <div class="track"><span class="ball spring"></span><small>spring</small></div>
+            <div class="track"><span class="ball linear"></span><small>linear</small></div>
+            <button class="pr-btn pr-btn--ink" id="motion-play">▶ Play</button>
+          </div>
+        </section>
+
+        <!-- ========== Components ========== -->
+        <section class="doc" id="buttons">
+          <p class="pr-eyebrow">Components</p>
+          <h2 class="pr-h1">Buttons</h2>
+          <p class="pr-lead">The spectrum button sweeps a beam of light across itself when you point at it. Every button is at least 46px tall and bounces a little when pressed.</p>
+          <div class="demo">
+            <div class="demo-stage">
+              <button class="pr-btn pr-btn--spectrum">Start building</button>
+              <button class="pr-btn pr-btn--glass">View components</button>
+              <button class="pr-btn pr-btn--ink">Get Prism ✦</button>
+              <button class="pr-btn pr-btn--ghost">Maybe later</button>
+              <button class="pr-btn pr-btn--spectrum" disabled>Disabled</button>
+            </div>
+          </div>
+          <div class="demo">
+            <div class="demo-stage">
+              <button class="pr-btn pr-btn--spectrum pr-btn--sm">Small</button>
+              <button class="pr-btn pr-btn--spectrum">Medium</button>
+              <button class="pr-btn pr-btn--spectrum pr-btn--lg">Large</button>
+              <button class="pr-btn pr-btn--glass pr-btn--icon" aria-label="Favourite">♡</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc" id="lens">
+          <p class="pr-eyebrow">Components · signature</p>
+          <h2 class="pr-h1">Lens</h2>
+          <p class="pr-lead">Prism's signature card. Move your mouse over it: a soft light follows the pointer, and the edge catches a rainbow right where the light lands.</p>
+          <div class="demo">
+            <div class="demo-stage lens-stage">
+              <article class="pr-lens">
+                <p class="pr-eyebrow">Studio</p>
+                <h3 class="pr-h2">Morning light</h3>
+                <p class="pr-muted">Sunrise at 6:52, golden hour at 4:31.</p>
+                <label class="pr-switch"><input type="checkbox" role="switch" checked /> Notify me</label>
+              </article>
+              <article class="pr-lens">
+                <p class="pr-eyebrow">Focus</p>
+                <div class="lens-ring"><span class="pr-ring" style="--pr-value: 64"><b>64%</b></span><span class="pr-muted">3 of 5 sessions done today</span></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc" id="badges">
+          <p class="pr-eyebrow">Components</p>
+          <h2 class="pr-h1">Chips &amp; badges</h2>
+          <p class="pr-lead">Badges announce a status in the deep spectrum; glass chips quietly label things.</p>
+          <div class="demo">
+            <div class="demo-stage">
+              <span class="pr-badge">New</span>
+              <span class="pr-badge pr-badge--mint">Live</span>
+              <span class="pr-badge pr-badge--coral">Sold out</span>
+              <span class="pr-badge pr-badge--ink">v1.0</span>
+              <span class="pr-chip"><span class="pr-pulse"></span> Recording</span>
+              <span class="pr-chip">Today</span>
+              <span class="pr-chip">✦ Light, bent beautifully</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc" id="cards">
+          <p class="pr-eyebrow">Components</p>
+          <h2 class="pr-h1">Cards</h2>
+          <p class="pr-lead">A plain glass card for everyday content, and a deep spectrum card for the one thing you want people to see first.</p>
+          <div class="demo">
+            <div class="demo-stage cards-stage">
+              <article class="pr-card pr-glass">
+                <p class="pr-eyebrow">Weekly report</p>
+                <h3 class="pr-h2">You slept 7h 40m</h3>
+                <p class="pr-muted">18 minutes more than last week. Keep the evening light low.</p>
+                <a class="pr-link" href="#cards">See the details</a>
+              </article>
+              <article class="pr-card--spectrum">
+                <p class="pr-eyebrow">Featured</p>
+                <h3 class="pr-h2">Prism Pro</h3>
+                <p style="color: rgba(255, 255, 255, 0.9)">Every component, the light lab and Figma files.</p>
+                <button class="pr-btn pr-btn--glass pr-btn--sm" style="color: #16123a">Upgrade ✦</button>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc" id="forms">
+          <p class="pr-eyebrow">Components</p>
+          <h2 class="pr-h1">Text fields</h2>
+          <p class="pr-lead">Glass fields that glow softly when you type. Every field has a real label and a hint, and errors say what went wrong in words, not just colour.</p>
+          <div class="demo">
+            <div class="demo-stage form-stage">
+              <div class="pr-field">
+                <label class="pr-label" for="f-name">Your name</label>
+                <input class="pr-input" id="f-name" placeholder="Hanee Patel" />
+                <span class="pr-hint">As it should appear on your profile.</span>
+              </div>
+              <div class="pr-field" data-invalid>
+                <label class="pr-label" for="f-mail">Email</label>
+                <input class="pr-input" id="f-mail" value="hanee@" aria-invalid="true" aria-describedby="f-mail-hint" />
+                <span class="pr-hint" id="f-mail-hint">✕ That email is missing its domain, like gmail.com.</span>
+              </div>
+              <div class="pr-field">
+                <label class="pr-label" for="f-plan">Plan</label>
+                <select class="pr-select" id="f-plan">
+                  <option>Starter</option>
+                  <option>Studio</option>
+                  <option>Pro</option>
+                </select>
+              </div>
+              <div class="pr-field">
+                <label class="pr-label" for="f-note">Message</label>
+                <textarea class="pr-textarea" id="f-note" placeholder="Tell us what you're making"></textarea>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc" id="choices">
+          <p class="pr-eyebrow">Components</p>
+          <h2 class="pr-h1">Choices</h2>
+          <p class="pr-lead">Checkboxes and radios fill with the deep spectrum, switches fill with light. All of them are real inputs underneath, so keyboards and screen readers just work.</p>
+          <div class="demo">
+            <div class="demo-stage choices-stage">
+              <label class="pr-check"><input type="checkbox" checked /> Email me updates</label>
+              <label class="pr-check"><input type="checkbox" /> Weekly digest</label>
+              <label class="pr-check"><input type="radio" name="d-size" checked /> Monthly</label>
+              <label class="pr-check"><input type="radio" name="d-size" /> Yearly</label>
+              <label class="pr-switch"><input type="checkbox" role="switch" checked /> Night shift</label>
+              <div class="pr-seg" role="radiogroup" aria-label="View">
+                <label><input type="radio" name="d-seg" /><span>Day</span></label>
+                <label><input type="radio" name="d-seg" checked /><span>Week</span></label>
+                <label><input type="radio" name="d-seg" /><span>Month</span></label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc" id="tabs">
+          <p class="pr-eyebrow">Components</p>
+          <h2 class="pr-h1">Tabs</h2>
+          <p class="pr-lead">A glass track where the chosen tab lights up. Use the arrow keys to move between tabs.</p>
+          <div class="demo">
+            <div class="demo-stage block">
+              <div class="pr-tabs">
+                <div role="tablist" aria-label="Report">
+                  <button role="tab" aria-selected="true">Overview</button>
+                  <button role="tab">Light</button>
+                  <button role="tab">Sleep</button>
+                </div>
+                <div role="tabpanel">You spent 2 hours in daylight today, 40 minutes more than usual.</div>
+                <div role="tabpanel" hidden>Brightest at 1:20 pm. Golden hour starts at 4:31.</div>
+                <div role="tabpanel" hidden>7h 40m, with the screen dimmed from 10 pm.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc" id="accordion">
+          <p class="pr-eyebrow">Components</p>
+          <h2 class="pr-h1">Accordion</h2>
+          <p class="pr-lead">Glass panels built on the native <code>&lt;details&gt;</code> element: click, tap or press Enter, with no JavaScript.</p>
+          <div class="demo">
+            <div class="demo-stage block">
+              <div class="pr-accordion">
+                <details open>
+                  <summary>Is Prism UI free?</summary>
+                  <p>Yes. Link the stylesheet and start building.</p>
+                </details>
+                <details>
+                  <summary>Does it work with React?</summary>
+                  <p>It's plain CSS classes and a tiny script, so it works with React, Vue, Svelte or no framework at all.</p>
+                </details>
+                <details>
+                  <summary>Will glass be hard to read?</summary>
+                  <p>No. Every text colour is tested against the solid colour behind the glass, so it stays readable even with nothing behind it.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc" id="callouts">
+          <p class="pr-eyebrow">Components</p>
+          <h2 class="pr-h1">Callouts</h2>
+          <p class="pr-lead">For the things a reader shouldn't miss. The icon and the words carry the meaning; the coloured edge backs them up.</p>
+          <div class="demo">
+            <div class="demo-stage block callouts">
+              <div class="pr-callout pr-callout--info"><b>✦</b><div><b>Tip:</b> layer glass over a colourful background for the best effect.</div></div>
+              <div class="pr-callout pr-callout--success"><b>✓</b><div><b>Saved.</b> Your theme is ready to copy.</div></div>
+              <div class="pr-callout pr-callout--warning"><b>!</b><div><b>Heads up:</b> very busy backgrounds can make glass harder to read.</div></div>
+              <div class="pr-callout pr-callout--error"><b>✕</b><div><b>Couldn't save.</b> Check your connection and try again.</div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc" id="progress">
+          <p class="pr-eyebrow">Components</p>
+          <h2 class="pr-h1">Progress &amp; avatars</h2>
+          <p class="pr-lead">Light fills the bar and the ring. Avatars sit inside a spectrum halo.</p>
+          <div class="demo">
+            <div class="demo-stage">
+              <span class="pr-ring" style="--pr-value: 82" role="img" aria-label="82 percent"><b>82%</b></span>
+              <div class="progress-wrap">
+                <div class="pr-progress" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Upload" style="--pr-value: 65%"></div>
+                <small class="pr-muted">Uploading · 65%</small>
+              </div>
+              <span class="pr-avatar"><span>HP</span></span>
+              <div class="pr-avatar-group" aria-label="3 people in this studio">
+                <span class="pr-avatar"><span>A</span></span>
+                <span class="pr-avatar"><span>R</span></span>
+                <span class="pr-avatar"><span>M</span></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc" id="overlays">
+          <p class="pr-eyebrow">Components</p>
+          <h2 class="pr-h1">Tooltip, modal &amp; toast</h2>
+          <p class="pr-lead">A tooltip from one attribute, a glass modal on the native <code>&lt;dialog&gt;</code> (focus is trapped and Esc closes it for free), and toasts that politely announce themselves to screen readers.</p>
+          <div class="demo">
+            <div class="demo-stage">
+              <button class="pr-btn pr-btn--glass" data-pr-tip="Saved to your library">Hover me</button>
+              <button class="pr-btn pr-btn--ink" data-pr-open="demo-modal">Open modal</button>
+              <button class="pr-btn pr-btn--spectrum" id="toast-demo">Show a toast</button>
+              <dialog class="pr-modal" id="demo-modal" aria-labelledby="demo-modal-title">
+                <p class="pr-eyebrow">Share</p>
+                <h3 class="pr-h2" id="demo-modal-title">Send this theme to a friend?</h3>
+                <p class="pr-muted">They'll get a link with your exact colours and roundness.</p>
+                <div class="pr-modal-actions">
+                  <button class="pr-btn pr-btn--ghost" data-pr-close>Not now</button>
+                  <button class="pr-btn pr-btn--spectrum" data-pr-close>Copy link</button>
+                </div>
+              </dialog>
+            </div>
+            <template class="code-extra">
+// Toasts and modals need the script. Call init() once:
+import PrismUI from './prism-ui.js';
+PrismUI.init();
+PrismUI.toast('Theme copied ✓', 'success');</template>
+          </div>
+        </section>
+
+        <section class="doc" id="nav">
+          <p class="pr-eyebrow">Components</p>
+          <h2 class="pr-h1">Glass nav</h2>
+          <p class="pr-lead">A floating glass bar that blurs whatever scrolls behind it.</p>
+          <div class="demo">
+            <div class="demo-stage nav-stage">
+              <nav class="pr-nav" aria-label="Demo">
+                <a class="pr-logo" href="#nav"><i></i>Studio</a>
+                <a href="#nav" aria-current="page">Home</a>
+                <a href="#nav">Work</a>
+                <a href="#nav">Contact</a>
+                <a class="pr-btn pr-btn--spectrum pr-btn--sm" href="#nav">Sign up</a>
+              </nav>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== Light lab ========== -->
+        <section class="doc" id="studio">
+          <p class="pr-eyebrow">Make it yours</p>
+          <h2 class="pr-h1">Light <em>lab</em></h2>
+          <p class="pr-lead">Pick the colours of your light, how round things are, and day or Midnight. The whole page follows, and the lab keeps every word readable by deepening colours where text sits on them.</p>
+          <div class="studio">
+            <div class="studio-controls pr-card pr-glass">
+              <div class="pr-field">
+                <span class="pr-label">Light</span>
+                <div class="presets" id="presets" role="radiogroup" aria-label="Light presets"></div>
+              </div>
+              <div class="pr-field">
+                <label class="pr-label" for="roundness">Roundness <span class="pr-muted" id="roundness-out">100%</span></label>
+                <input type="range" id="roundness" min="0" max="2" step="0.05" value="1" />
+              </div>
+              <div class="pr-field">
+                <label class="pr-label" for="blur">Frost <span class="pr-muted" id="blur-out">18px</span></label>
+                <input type="range" id="blur" min="0" max="40" step="1" value="18" />
+              </div>
+              <div class="pr-field">
+                <span class="pr-label">Mood</span>
+                <div class="pr-seg" role="radiogroup" aria-label="Mood">
+                  <label><input type="radio" name="mood" value="light" checked /><span>Day</span></label>
+                  <label><input type="radio" name="mood" value="dark" /><span>Midnight</span></label>
+                </div>
+              </div>
+              <label class="pr-switch"><input type="checkbox" role="switch" id="calm" /> Calm motion</label>
+              <div class="studio-actions">
+                <button class="pr-btn pr-btn--spectrum" id="copy-theme">Copy theme CSS</button>
+                <button class="pr-btn pr-btn--ghost" id="reset-theme">Reset</button>
+              </div>
+              <p class="pr-hint" id="lab-grade"></p>
+            </div>
+            <div class="studio-preview">
+              <article class="pr-lens">
+                <div class="preview-head">
+                  <span class="pr-avatar"><span>HP</span></span>
+                  <div><b>Hanee Patel</b><br /><span class="pr-muted">Designer who codes</span></div>
+                  <span class="pr-badge">New</span>
+                </div>
+                <h3 class="pr-h2">Made of <em>light.</em></h3>
+                <div class="pr-progress" style="--pr-value: 72%" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" aria-label="Progress"></div>
+                <div class="preview-row">
+                  <span class="pr-chip">Glass</span><span class="pr-chip">Spectrum</span><span class="pr-chip">Midnight</span>
+                </div>
+                <div class="preview-row">
+                  <button class="pr-btn pr-btn--spectrum">Start building</button>
+                  <label class="pr-switch"><input type="checkbox" role="switch" checked /> Glow</label>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== Accessibility ========== -->
+        <section class="doc" id="a11y">
+          <p class="pr-eyebrow">Make it yours</p>
+          <h2 class="pr-h1">Accessibility</h2>
+          <p class="pr-lead">Glass and rainbows are easy to get wrong. Prism is built so everyone can still read and use it.</p>
+          <ul class="checks">
+            <li><b>Contrast, tested.</b> 30 automated tests check every text and background pair in both themes against WCAG AA, using the solid colour behind the glass, so text stays readable even with nothing colourful behind it.</li>
+            <li><b>Two spectrums.</b> The bright one is only for glows, rings and toggles. Anything with text on it uses the deep spectrum, where white text reaches at least 4.9:1.</li>
+            <li><b>Real elements.</b> Buttons are buttons, switches are checkboxes, the modal is a native dialog and the accordion is details and summary, so keyboards and screen readers work without extra code.</li>
+            <li><b>Visible focus.</b> A thick violet ring shows where the keyboard is, everywhere.</li>
+            <li><b>Big targets.</b> Buttons and fields are at least 46px tall.</li>
+            <li><b>Calm motion.</b> One switch makes every animation near-instant, and <code>followSystemMotion()</code> turns it on from the visitor's system setting.</li>
+          </ul>
+        </section>
+
+        <!-- ========== Get started ========== -->
+        <section class="doc" id="start">
+          <p class="pr-eyebrow">Get started</p>
+          <h2 class="pr-h1">Two lines to <em>glow</em></h2>
+          <p class="pr-lead">Add the fonts and the stylesheet, put <code>class="pr"</code> on your body (and the mesh if you like), then copy any component from this page.</p>
+          <pre class="code"><code id="start-code"></code><button class="copy pr-btn pr-btn--glass pr-btn--sm" data-copy-from="start-code">Copy</button></pre>
+          <div class="pr-callout pr-callout--success start-note"><b>✓</b><div>Need lens light, tabs, modals or toasts? Add the script and call <code>PrismUI.init()</code>. Everything else is pure CSS.</div></div>
+        </section>
+
+        <footer class="foot">
+          <hr class="pr-beam" />
+          <p>Designed and built by <a class="pr-link" href="https://hanee2907.github.io">Hanee Patel</a> · <a class="pr-link" href="https://github.com/Hanee2907/prism-ui">Source on GitHub</a></p>
+        </footer>
+      </main>
+    </div>
+
+  </body>
+</html>
