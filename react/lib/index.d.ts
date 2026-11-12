@@ -1,4 +1,6 @@
-import './tokens.css';
+import './generated/light.css';
+import './generated/dark.css';
+import './theme.css';
 import './components.css';
 export type Theme = 'light' | 'dark' | 'auto';
 export type Tone = 'info' | 'success' | 'warning' | 'error';

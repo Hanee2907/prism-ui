@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly, this file was auto-generated.
+-->
+<resources>
+  <color name="color_bg">#fff4f1ff</color><!-- The room the light falls into -->
+  <color name="color_bg_2">#ffebe6ff</color>
+  <color name="color_surface">#fffbfaff</color><!-- Solid colour behind the glass; contrast is checked against it -->
+  <color name="color_glass">#8cffffff</color>
+  <color name="color_glass_strong">#c7ffffff</color>
+  <color name="color_glass_edge">#f2ffffff</color>
+  <color name="color_line">#1f16123a</color>
+  <color name="color_ink">#ff16123a</color><!-- Text -->
+  <color name="color_ink_2">#ff4a4570</color><!-- Secondary text -->
+  <color name="color_ink_3">#ff5f5a85</color><!-- Hints -->
+  <color name="color_pink">#ffff5fb8</color><!-- Bright spectrum: light and glow only, never under text -->
+  <color name="color_violet">#ff6a5cff</color>
+  <color name="color_cyan">#ff18b5e6</color>
+  <color name="color_sun">#ffffcf6e</color>
+  <color name="color_pink_deep">#ffc92a8e</color><!-- Deep spectrum: wherever text sits on it -->
+  <color name="color_violet_deep">#ff5b46f0</color>
+  <color name="color_cyan_deep">#ff0a78a8</color>
+  <color name="color_accent_text">#ff5139e0</color><!-- Links and small accent text -->
+  <color name="color_on_deep">#ffffffff</color><!-- Text on the deep spectrum -->
+  <color name="color_mint">#ff0d7a50</color><!-- Success -->
+  <color name="color_coral">#ffc2331f</color><!-- Errors -->
+</resources>

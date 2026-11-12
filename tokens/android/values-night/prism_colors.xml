@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly, this file was auto-generated.
+-->
+<resources>
+  <color name="color_bg">#ff0d0b24</color><!-- Midnight: the same light, after dark -->
+  <color name="color_bg_2">#ff16133a</color>
+  <color name="color_surface">#ff1b1842</color>
+  <color name="color_glass">#0fffffff</color>
+  <color name="color_glass_strong">#1affffff</color>
+  <color name="color_glass_edge">#29ffffff</color>
+  <color name="color_line">#1ff1eeff</color>
+  <color name="color_ink">#fff1eeff</color>
+  <color name="color_ink_2">#ffc3bde6</color>
+  <color name="color_ink_3">#ffa29cc9</color>
+  <color name="color_accent_text">#ffb4a8ff</color>
+  <color name="color_mint">#ff3fd49a</color>
+  <color name="color_coral">#ffff8a78</color>
+</resources>

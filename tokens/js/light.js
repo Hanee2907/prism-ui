@@ -1,0 +1,53 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+export const FontDisplay = "'Instrument Serif', 'Times New Roman', serif"; // Headlines
+export const FontSans = "'Manrope', system-ui, sans-serif"; // Everything you read
+export const FontMono = "ui-monospace, 'Cascadia Code', Consolas, monospace"; // Code
+export const TextXs = "0.78rem";
+export const TextSm = "0.9rem";
+export const TextMd = "1rem";
+export const TextLg = "1.2rem";
+export const TextXl = "2rem";
+export const Text2xl = "clamp(2.6rem, 5vw, 3.6rem)";
+export const Text3xl = "clamp(3.4rem, 9vw, 7.5rem)";
+export const Space1 = "4px"; // 4px grid
+export const Space2 = "8px";
+export const Space3 = "12px";
+export const Space4 = "16px";
+export const Space5 = "24px";
+export const Space6 = "32px";
+export const Space7 = "48px";
+export const Space8 = "72px";
+export const RadiusBaseSm = "12px"; // Multiplied by --pr-round in theme.css, so the light lab can scale every corner
+export const RadiusBaseMd = "18px";
+export const RadiusBaseLg = "26px";
+export const RadiusBaseXl = "36px";
+export const Blur = "18px"; // Frost on every glass surface
+export const MotionEase = "cubic-bezier(0.22, 1, 0.36, 1)"; // Glides into place
+export const MotionSpring = "cubic-bezier(0.34, 1.56, 0.64, 1)"; // A tiny bounce, like light settling
+export const DurationFast = "0.18s";
+export const DurationBase = "0.35s";
+export const DurationSlow = "0.8s";
+export const ColorBg = "#f4f1ff"; // The room the light falls into
+export const ColorBg2 = "#ebe6ff";
+export const ColorSurface = "#fbfaff"; // Solid colour behind the glass; contrast is checked against it
+export const ColorGlass = "#ffffff";
+export const ColorGlassStrong = "#ffffff";
+export const ColorGlassEdge = "#ffffff";
+export const ColorLine = "#16123a";
+export const ColorInk = "#16123a"; // Text
+export const ColorInk2 = "#4a4570"; // Secondary text
+export const ColorInk3 = "#5f5a85"; // Hints
+export const ColorPink = "#ff5fb8"; // Bright spectrum: light and glow only, never under text
+export const ColorViolet = "#6a5cff";
+export const ColorCyan = "#18b5e6";
+export const ColorSun = "#ffcf6e";
+export const ColorPinkDeep = "#c92a8e"; // Deep spectrum: wherever text sits on it
+export const ColorVioletDeep = "#5b46f0";
+export const ColorCyanDeep = "#0a78a8";
+export const ColorAccentText = "#5139e0"; // Links and small accent text
+export const ColorOnDeep = "#ffffff"; // Text on the deep spectrum
+export const ColorMint = "#0d7a50"; // Success
+export const ColorCoral = "#c2331f"; // Errors
