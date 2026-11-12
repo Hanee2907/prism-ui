@@ -2,7 +2,9 @@
 
 A design system of frosted glass, soft mesh gradients and one rainbow that runs through every button, toggle and chart, like light through a prism. Light and Midnight themes, accessible by default, and ready to copy.
 
-**Live docs:** https://hanee2907.github.io/prism-ui/
+[![CI](https://github.com/Hanee2907/prism-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/Hanee2907/prism-ui/actions/workflows/ci.yml)
+
+**Live docs:** https://hanee2907.github.io/prism-ui/ · **Storybook:** https://hanee2907.github.io/prism-ui/storybook/
 
 ![Prism UI in Midnight](docs/screenshot.png)
 
@@ -12,6 +14,27 @@ A design system of frosted glass, soft mesh gradients and one rainbow that runs 
 - **20 components:** spectrum, glass, ink and ghost buttons; **Lens**, the signature glass card whose light and rainbow edge follow your cursor; chips and badges; glass and spectrum cards; text fields, selects and textareas; checkboxes, radios, switches and a segmented control; tabs; accordion; callouts; progress bar and ring; avatars; tooltip; modal; toasts; glass nav; and a light-beam divider.
 - **Light lab:** pick a spectrum (Prism, Sunset, Aurora, Ocean, Bloom), roundness, frost and Day or Midnight, and the whole page follows. It deepens colours automatically wherever text sits on them, then copies your theme as CSS.
 - **Every demo shows its exact code**, with a copy button.
+
+## React
+
+22 typed React components over the same CSS: `Button`, `Lens`, `Card`, `Chip`, `Badge`, `Heading`, `TextField`, `TextArea`, `Select`, `Checkbox`, `Radio`, `Switch`, `Segmented`, `Tabs`, `Accordion`, `Callout`, `Progress`, `Ring`, `Avatar`, `Tooltip`, `Modal` and `Nav`, plus a `useToast()` hook. Each has a page in **Storybook** with live controls, a Day/Midnight switch and the a11y checker.
+
+```tsx
+import 'prism-ui/react/prism-ui.css';
+import { Button, Lens, Heading, Switch } from 'prism-ui/react';
+
+<Lens>
+  <Heading size={2}>Morning <em>light</em></Heading>
+  <Switch label="Notify me" defaultChecked />
+  <Button variant="spectrum">Start building</Button>
+</Lens>
+```
+
+## Testing and CI
+
+- **Unit tests (Vitest):** 30 contrast tests on the design tokens, plus 9 React component tests with Testing Library (labels, keyboard tabs, switches, modal, error states).
+- **Browser tests (Playwright + axe-core):** 19 tests open the real built site on desktop and phone sizes, scan Day and Midnight for WCAG A/AA violations, and click through the theme switch, tabs, modal, toasts, light lab and code panels.
+- **GitHub Actions:** every push and pull request runs the type-check, unit tests, full build (docs, library, React package, Storybook) and browser tests; pushes to `main` that pass are deployed to GitHub Pages automatically.
 
 ## Accessibility
 
@@ -40,13 +63,15 @@ A design system of frosted glass, soft mesh gradients and one rainbow that runs 
 
 ## Built with
 
-TypeScript · CSS custom properties · Vite (docs site and library build) · Vitest
+TypeScript · React · CSS custom properties · Vite · Storybook · Vitest + Testing Library · Playwright + axe-core · GitHub Actions
 
 ```bash
 npm install
 npm run dev     # docs site
-npm test        # contrast tests
-npm run build   # dist/ (docs) and dist/lib/ (prism-ui.css, prism-ui.js)
+npm test        # unit tests (contrast + React)
+npm run storybook   # component workshop
+npm run test:e2e    # browser + accessibility tests
+npm run build   # dist/: docs, lib/ (CSS + JS), react/ (components + types), storybook/
 ```
 
 Designed and built by [Hanee Patel](https://hanee2907.github.io).

@@ -258,6 +258,22 @@ $('start-code').textContent = `<!-- 1. Fonts and Prism UI -->
   </script>
 </body>`;
 
+$('react-code').textContent = `import 'prism-ui/react/prism-ui.css';
+import { Button, Lens, Heading, Switch, useToast } from 'prism-ui/react';
+
+export function Card() {
+  const toast = useToast();
+  return (
+    <Lens>
+      <Heading size={2}>Morning <em>light</em></Heading>
+      <Switch label="Notify me" defaultChecked />
+      <Button variant="spectrum" onClick={() => toast('Saved ✓', 'success')}>
+        Start building
+      </Button>
+    </Lens>
+  );
+}`;
+
 // ---------- Start ----------
 
 document.querySelectorAll('section.doc').forEach((s) => s.classList.add('pr-reveal'));
